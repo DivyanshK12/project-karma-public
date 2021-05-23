@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}New Post | {{ username }}{% endblock %}
+{% block content %}
+<div class="container">
+<h1 id ="check"></h1>
+<h2>New Post</h2>
+<form method="POST" action="/upload_image" enctype="multipart/form-data">
+    {{ form.csrf_token }}
+    <div class="custom-file">
+        <input type="file" class="custom-file-input" id="upload" name="upload" required="">
+        <label class="custom-file-label" for="upload" id="label_img">Select an Image</label>
+      </div>
+      <div class="mb-3">
+        <label for="caption" class="form-label">Caption</label>
+        <input type="text" class="form-control" id="caption" name = "caption" placeholder="This is where the caption goes">
+      </div>
+    <button type="button" class="btn btn-primary" id="submit">Submit</button>
+    {{ form.hidden_tag() }}
+    <!-- </div> -->
+</form>
+  <div class="row justify-content-md-center my-5">
+    <div class="col-8">
+      <img id="image" class="img-fluid rounded"/>
+    </div>
+  </div>
+</div>
+<script src = "/static/js/firebase_init.js"></script>
+<script src="/static/js/upload.js"></script>
+<script src="/static/js/direct.js"></script>
+{% endblock %}

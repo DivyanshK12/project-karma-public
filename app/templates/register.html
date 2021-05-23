@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block title %}Register{% endblock %}
+{% block content %}
+<div class="container">
+<h1>Enter Credentials</h1>
+<form method="POST" action="/register" autocomplete="off">
+    {{ form.csrf_token }}
+<div class="row">
+    <div class="col-4">
+        <label for="username" class="form-label">User Name</label>
+        <input type="text" class="form-control" name="username" id="username" placeholder="Username">
+      </div>
+    <div class="col-8">
+        <label for="fullname" class="form-label">Full Name</label>
+        <input type="text" class="form-control" name="fullname" id="fullname" placeholder="Firstname Lastname">
+      </div>
+      <div class="col-12">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" name="email"id="email" placeholder="email@email.email">
+      </div>
+    <div class="col-6">
+      <label for="password" class="form-label">Password</label>
+      <input type="password" id="password" name = "password"class="form-control" placeholder="Password" aria-label="Password">
+    </div>
+    <div class="col-6">
+      <label for="confirm" class="form-label">Confirm Password</label>
+      <input type="password" id = "confirm" name = "confirm" class="form-control" placeholder="Confirm Password" aria-label="Confirm Password">
+    </div>
+    <div class="col-12">
+        <br>
+        <button type="submit" class="btn btn-dark">Submit</button>
+    </div>
+</div>
+    {{ form.hidden_tag() }}
+  </form>
+<hr>
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-danger" role="alert">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+</div>
+{% endblock %}

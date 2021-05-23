@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block title %}{{ username }}{% endblock %}
+{% block content %}
+<!--Make the structure here and fill using script, similar to firebase_img.js-->
+<!-- Need flexbox with image on left and comments list on the right, 
+    form here will be handled by javascript as comments stored on firebase-->
+<div class="container">
+        <div class="row">
+            <div class="col-8">
+                <div class="card mb-3">
+                    <div class="row justify-content-md-center">
+                        <div class="col-6">
+                            <img class="card-img-top" id="main-img">
+                        </div>
+                    </div>
+                    <div class="card-header">
+                        <p class="card-text">{{ post.poster_name }}</p>
+                      </div>
+                    <div class="card-body">
+                      <h2 class="card-title" id="cap"></h2>
+                      <h4 class="card-text"><small class="text-muted">{{ post.posted }}</small></h4>
+                    </div>
+                  </div>
+            </div><!--col8 -->
+            <div class="col">
+                <ul class="list-group" id='comment-bar'>
+                </ul>
+                <br>
+                <form method="POST" autocomplete="off" id="comment_form">
+                    {{ form.csrf_token }}
+                    <input type="text" class="form-control" id="comment" name="comment" placeholder="comment">
+                    <br>
+                    <button class="btn btn-outline-primary" id="submitbtn" type="button">Submit</button>
+                {{ form.hidden_tag() }}
+                </form>
+            </div><!-- col-->
+      </div>
+<script src = "/static/js/firebase_init.js"></script>
+<script src = "/static/js/post.js"></script>
+{% endblock %}

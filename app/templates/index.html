@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}Project Karma | {{ username }}{% endblock %}
+{% block content %}
+      <div class="container">
+        <div class="card bg-dark text-white jumbo m-5">
+          <img src="/static/images/Home.jpg" class="card-img" alt="home">
+          <div class="card-img-overlay">
+            <h5 class="card-title">Project Karma</h5>
+            <p class="card-text">Sentiment Analysis at every comment</p>
+          </div>
+        </div>
+        <h2>Philosophy</h2>
+        <p>This project uses sentiment analysis on every comment posted, and highlights the result
+          with the score for the world to see. Red denotes positive sentiment, while blue denotes negative. 
+          This utilises the vader_lexicon with NLTK to do so, and hence results might not be entiely accurate.
+        </p>
+        <h2>Latest Posts</h2>
+        <hr>
+        <div id='main-page'></div>
+    </div>
+<script src = "/static/js/firebase_init.js"></script>
+<script src = "/static/js/putposts.js"></script>
+<script src = "/static/js/index.js"></script>
+{% endblock %}

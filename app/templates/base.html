@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link rel="icon" href="/static/images/Icon.svg" type="image/svg">
+    <title>{% block title %}{% endblock %}</title>
+    {% block style %}{% endblock %}
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-storage.js"></script>
+  </head>
+  <body>
+    <header>
+      <!-- Fixed navbar -->
+      <nav class="navbar navbar-expand-md navbar-light bg-light mb-1">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/home">Karma</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="#navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav">
+              <a class="nav-link" aria-current="page" href="/home">Home</a>
+              <a class="nav-link" href="/upload_image">Upload</a>
+              <a class="nav-link" href="/all">All Posts</a>
+              <a class="nav-link" href="/login">Sign In</a>
+              <a class="nav-link" href="/register">New Account</a>
+              <span class="navbar-text text-danger">
+                  [Do not enter sensitive information]
+              </span>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main class="flex-shrink-0">{% block content %}{% endblock %}</main>
+    <footer class="py-5 bg-light">
+      <div class="container">
+      <div class="row">
+        <div class="col-12 col-md">
+          <img src="/static/images/Icon2.svg">
+          <small class="d-block mb-3 text-muted">&copy; 2021</small>
+          <p>This is just a personal project. Please do not enter any sensitive information during the course of its use. The creator takes no responsibility of absolute security of the same.</p>
+        </div>
+        <div class="col-6 col-md">
+          <h5>Resources</h5>
+          <ul class="list-unstyled text-small">
+            <li><a class="link-secondary" href="https://firebase.google.com/">Firebase</a></li>
+            <li><a class="link-secondary" href="https://palletsprojects.com/p/flask/">Flask</a></li>
+            <li><a class="link-secondary" href="https://getbootstrap.com/">Bootstrap</a></li>
+            <li><a class="link-secondary" href="https://www.nltk.org/">NLTK</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md">
+          <h5>About Me</h5>
+          <ul class="list-unstyled text-small">
+            <li><a class="link-secondary" href="https://github.com/dkarmy12">GitHub</a></li>
+            <li><a class="link-secondary" href="https://www.linkedin.com/in/divyansh-kharbanda-216473199/">LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+      </div>
+    </footer>
+    <!--Bootstrap JS files-->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
