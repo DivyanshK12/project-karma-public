@@ -1,5 +1,5 @@
 # Description
-Flask App that takes image from the user and uploads it to firebase.
+A web app that follows the general structure of a photo-sharing based social media platform, with sentiment analysis based classification of comments, which get highlighted as red if they are positive, blue if they are negative and similar shades in between.
 
 Final view can be seen at : https://project-karma-dk.herokuapp.com/
 
@@ -43,8 +43,7 @@ Refer official documentation for firebase_sdk for python and using firebase on w
 * Update Navbar text to be on the right side (d-flex solution tried-> Failed)
 
 # NAVIGATION 
-* Go to 127:0:0:1::5000/register
-* Register an account, this takes you to the login page
+* Regsiter at /register, this takes you to the login page
 * At login page enter email id and password
 * You arrive at upload_files/, just upload an image, this is where a user would make a new post
-* Visiting "/all" would get images/posts
+* Visiting "/all" would get images/posts, new posts get updated on the home page (atleast one is visible always)
